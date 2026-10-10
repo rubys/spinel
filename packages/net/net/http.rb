@@ -416,6 +416,13 @@ module Net
       @use_ssl
     end
 
+    # This client connects direct or not at all (`new` raises given a
+    # proxy), so it never has one -- CRuby answers false here too when
+    # none is set.
+    def proxy?
+      false
+    end
+
     def started?
       @started
     end
